@@ -26,7 +26,7 @@ def setup():
     parser.add_argument('--hdim',type=int,default=128)
     parser.add_argument('--num_heads',type=int,default=4)
     parser.add_argument('--sample_size',type=int,default=1)
-    parser.add_argument('--jitter',type=float,default=1e-9)
+    parser.add_argument('--jitter',type=float,default=1e-7)
     parser.add_argument('--drop_rate',type=float,default=0.1)
     parser.add_argument('--keys_len',type=int,default=32)
     parser.add_argument('--kernel_type',type=str,default='ard')
