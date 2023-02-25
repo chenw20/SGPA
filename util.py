@@ -1,6 +1,5 @@
 import torch
 
-
 def lr_scheduler(epoch, warmup_epochs, decay_epochs, initial_lr, base_lr, min_lr):
     if epoch <= warmup_epochs:
         pct = epoch / max(warmup_epochs,1)
