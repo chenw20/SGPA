@@ -5,7 +5,6 @@ import math
 import torch
 import torch.nn.functional as F
 
-
 def process_batch(data, word_to_int, device): 
     batch_size = len(data)       
     dd_temp,data_temp,ans_temp,max_len=[],[],[],0
