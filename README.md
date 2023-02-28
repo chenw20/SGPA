@@ -5,6 +5,8 @@ This code implememts SGPA on CIFAR10 and CoLA datasets.
 
 To use this code: simply run train_cifar.py or train_cola.py
 
+The CoLA dataset can be downloaded [here](https://nyu-mll.github.io/CoLA/)
+
 Dependencies:
 - Python - 3.8
 - Pytorch - 1.10.2
