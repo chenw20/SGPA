@@ -1,5 +1,5 @@
 # Sparse Gaussian Process Attention
-This is an example code for the paper titled Calibrating Transformers via Sparse Gaussian Processes (ICLR 2023)
+This is an example code for the paper titled [Calibrating Transformers via Sparse Gaussian Processes (ICLR 2023)](https://openreview.net/pdf?id=jPVAFXHlbL)
 
 This code implememts SGPA on CIFAR10 and CoLA datasets.
 
