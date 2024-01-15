@@ -14,6 +14,8 @@ Dependencies:
 - einops - 0.4.1
 - allennlp - 2.9.3
 
+ECE/MCE reported in the paper are computed according to this [script](https://colab.research.google.com/drive/1H_XlTbNvjxlAXMW5NuBDWhxF3F2Osg1F?usp=sharing#scrollTo=w1SAqFR7wPvs).
+
 ## Citing the paper (bib)
 ```
 @inproceedings{chen2023calibrating,
