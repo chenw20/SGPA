@@ -117,7 +117,7 @@ class SGP_LAYER(nn.Module):
             chol_covar = chol_covar.unsqueeze(2) 
             
             samples = mean.permute(0,1,3,2).unsqueeze(2) + (chol_covar @ \
-                torch.randn(mean.shape[0], mean.shape[1], self.sample_size, mean.shape[3], mean.shape[2], 1).to(self.device)).squeeze(-1)   
+                torch.randn_like(mean.unsqueeze(2).tile((1,1,self.sample_size,1,1)).unsqueeze(-1))).squeeze(-1)   
 
             samples = samples.permute(0,1,2,4,3) 
             
