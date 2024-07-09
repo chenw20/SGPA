@@ -1,4 +1,5 @@
 import torch
+import math
 
 def lr_scheduler(epoch, warmup_epochs, decay_epochs, initial_lr, base_lr, min_lr):
     if epoch <= warmup_epochs:
@@ -13,13 +14,18 @@ def lr_scheduler(epoch, warmup_epochs, decay_epochs, initial_lr, base_lr, min_lr
 def kernel_ard(X1, X2, log_ls, log_sf):
     X1 = X1 * torch.exp(-log_ls).unsqueeze(1)
     X2 = X2 * torch.exp(-log_ls).unsqueeze(1)
-    X1 = X1.permute(0,1,3,2).unsqueeze(4) 
-    X2 = X2.unsqueeze(3) 
-    return  torch.exp(log_sf).unsqueeze(1) * \
-        torch.exp(-0.5* torch.sum((X1-X2.permute(0,1,4,3,2)).pow(2), 2)) 
+    factor1 = torch.sum(X1.pow(2), -1)
+    factor2 = torch.sum(X2.pow(2), -1)
+    return torch.exp(log_sf).unsqueeze(1) * \
+        torch.exp(-0.5* (factor1.unsqueeze(3) + factor2.unsqueeze(2) -2* X1 @ X2.permute(0,1,3,2)))
 
 
 def kernel_exp(X1, X2, log_ls, log_sf):
     X1 = X1 * torch.exp(-log_ls).unsqueeze(1) 
     X2 = X2 * torch.exp(-log_ls).unsqueeze(1)
     return torch.exp(log_sf).unsqueeze(1)* torch.exp(X1 @ X2.permute(0,1,3,2))
+
+
+def scale_dot(X1, X2):
+    dk = X2.shape[3]
+    return torch.softmax(X1 @ X2.permute(0,1,3,2)/ (math.sqrt(dk)), 3)
