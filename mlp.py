@@ -65,7 +65,7 @@ class FC(torch.nn.Module):
 
 class ClassficationHead_vit(torch.nn.Module):
     def __init__(self, hdim, num_class):
-        super(ClassficationHead, self).__init__()
+        super(ClassficationHead_vit, self).__init__()
         self.hdim = hdim
         self.num_class = num_class
         self.fc = nn.Linear(hdim, num_class)
