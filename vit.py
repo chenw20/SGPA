@@ -27,7 +27,7 @@ class ViT(torch.nn.Module):
 
         self.patch_embedding = Patch_embedding(patch_size=patch_size, in_channels=in_channels, hdim=hdim, max_len=max_len, drop_rate=drop_rate)
         
-        self.class_head = ClassficationHead(hdim=hdim, num_class=num_class)
+        self.class_head = ClassficationHead_vit(hdim=hdim, num_class=num_class)
 
         self.device = device
 
