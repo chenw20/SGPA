@@ -39,7 +39,7 @@ def setup():
     parser.add_argument('--drop_rate',type=float,default=0.1)
     parser.add_argument('--keys_len',type=int,default=50)
     parser.add_argument('--kernel_type',type=str,default='exponential')
-    parser.add_argument('--flag_sgp',type=bool,default=True)
+    parser.add_argument('--flag_sgp',type=bool,default=False)
     parser.add_argument('--epochs',type=int,default=20)
     parser.add_argument('--init_model',type=str,default=None)
     parser.add_argument('--output_folder',type=str,default='./models')
