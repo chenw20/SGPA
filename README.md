@@ -12,7 +12,6 @@ Dependencies:
 - Pytorch - 1.10.2
 - numpy - 1.22.4
 - einops - 0.4.1
-- allennlp - 2.9.3
 - pandas - 1.4.3
 - transformers - 4.18.0
 
